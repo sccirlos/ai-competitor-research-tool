@@ -6,6 +6,18 @@
 outputs/
 *.csv
 *.json
+!research_configs.json
+!cache_metadata.json
+
+# ignore all cached outputs EXCEPT selected ones
+cached_outputs/*
+!cached_outputs/therapynotes_ai_features/
+!cached_outputs/jane_messaging_collaboration/
+!cached_outputs/ensora_documentation_workflows/
+!cached_outputs/mentalyc_documentation_workflows/
+!cached_outputs/ensora_documentation_workflows
+!cached_outputs/therapynotes_documentation_workflows/
+
 
 # Python
 __pycache__/

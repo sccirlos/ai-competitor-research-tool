@@ -1,0 +1,52 @@
+{
+  "therapynotes_ai_features": {
+    "competitor_name": "TherapyNotes",
+    "focus_id": "ai_features",
+    "focus_name": "ai_features",
+    "last_updated": "2026-04-14T12:52:00.148129",
+    "cache_folder": "cached_outputs/therapynotes_ai_features",
+    "original_date": "2026-04-14"
+  },
+  
+  "therapynotes_documentation_workflows": {
+    "competitor_name": "TherapyNotes",
+    "focus_id": "documentation_workflows",
+    "focus_name": "documentation_workflows",
+    "last_updated": "2026-04-14T19:38:15.527665",
+    "cache_folder": "cached_outputs/therapynotes_documentation_workflows",
+    "original_date": "2026-04-14"
+  },
+  "jane_documentation_workflows": {
+    "competitor_name": "Jane",
+    "focus_id": "documentation_workflows",
+    "focus_name": "Documentation & Clinical Workflows",
+    "last_updated": "2026-04-15T11:11:22.030531",
+    "cache_folder": "cached_outputs/jane_documentation_workflows",
+    "output_folder_name": "jane_documentation_&_clinical_workflows_2026-04-15_11-01-43"
+  },
+  "mentalyc_documentation_workflows": {
+    "competitor_name": "Mentalyc",
+    "focus_id": "documentation_workflows",
+    "focus_name": "documentation_workflows",
+    "last_updated": "2026-04-14T21:26:46.249282",
+    "cache_folder": "cached_outputs/mentalyc_documentation_workflows",
+    "original_date": "2026-04-14"
+  },
+ 
+  "ensora_documentation_workflows": {
+    "competitor_name": "Ensora",
+    "focus_id": "documentation_workflows",
+    "focus_name": "Documentation & Clinical Workflows",
+    "last_updated": "2026-04-15T11:59:01.543841",
+    "cache_folder": "cached_outputs/ensora_documentation_workflows",
+    "output_folder_name": "ensora_documentation_&_clinical_workflows_2026-04-15_11-51-56"
+  },
+  "jane_messaging_collaboration": {
+    "competitor_name": "Jane",
+    "focus_id": "messaging_collaboration",
+    "focus_name": "Messaging & Collaboration",
+    "last_updated": "2026-04-15T12:43:04.344204",
+    "cache_folder": "cached_outputs/jane_messaging_collaboration",
+    "output_folder_name": "jane_messaging_&_collaboration_2026-04-15_12-37-37"
+  }
+}
