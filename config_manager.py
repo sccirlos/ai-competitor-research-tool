@@ -5,7 +5,9 @@ import json
 import os
 from typing import Dict, List, Optional
 
-CONFIG_FILE = "research_configs.json"
+from pathlib import Path
+
+CONFIG_FILE = Path(__file__).resolve().parent / "research_configs.json"
 
 def load_research_configs() -> Dict:
     """Load research configurations from JSON file"""
@@ -28,12 +30,12 @@ def load_research_configs() -> Dict:
         save_research_configs(default_config)
         return default_config
     
-    with open(CONFIG_FILE, 'r') as f:
+    with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
 
 def save_research_configs(configs: Dict) -> None:
     """Save research configurations to JSON file"""
-    with open(CONFIG_FILE, 'w') as f:
+    with open(CONFIG_FILE, 'w', encoding='utf-8') as f:
         json.dump(configs, f, indent=2)
 
 def get_config_names() -> List[str]:
