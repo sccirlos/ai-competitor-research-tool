@@ -1,0 +1,87 @@
+# Competitive Research Summary
+
+**Focus Area:** Documentation & Clinical Workflows
+
+**Generated:** jane_documentation_&_clinical_workflows_2026-04-15_11-01-43
+
+**Competitors Analyzed:** Jane
+
+---
+
+## Jane
+
+### Documentation Workflow Overview
+
+- Documentation-related features found: 18
+
+### Core Note and Treatment Plan Capabilities
+
+- **Chart Templates**: Customizable template builder with reusable chart 'parts' (components). Includes Template Library to browse and customize templates from other practitioners. Supports discipline-specific customization.
+- **Chart Parts**: Modular components for building chart templates: free-text notes, Primary Complaint, checkboxes, dropdowns, range/scale, vitals, optical measurements, body charts, image annotation, spine diagrams, file upload, sketch, signature, headings, instructions, Smart SOAP Note (AI Scribe).
+- **Sign & Lock Workflow**: Chart entries begin in draft state until practitioner signs them. Signing adds digital timestamp and signature (byline). Locked charts can only be modified via formal Amendment process that preserves original content and timestamps changes. Compliant with charting regulations.
+- **Amendments**: Allows chart author to make changes to signed/locked chart entries while maintaining compliance. Amendments are timestamped and preserve original content visibility. Chart shows both original and amended information with dates.
+- **Treatment Plans**: Organizational containers for linking chart entries to specific patient concerns. Supports up to 3 diagnosis codes, suggested visit count tracking, and linking of chart entries and appointments. Treatment Plans Report shows open plans and visit progress across caseload. Separate from note creation workflow.
+- **Phrases (Text Snippets)**: Text macros/shortcuts for commonly used text in chart notes. Practitioners can save snippets (up to 2000 characters per phrase) and insert them with keyboard shortcuts. Specific to each practitioner profile. Only usable in charting area.
+- **Supervision**: Workflow for supervisee/supervisor chart review and co-signing. Supervisees can request supervisor signature (optional or required per chart). Supervisors can review, leave feedback, sign off, or re-assign charts. Includes Supervision tab for tracking chart status.
+- **Mobile Charting**: Full charting capabilities on mobile devices (tablets and smartphones) via web browser. Responsive design with Day View access, chart entry creation, sign & lock workflow, and visual indicators for charting completion.
+- **Picture-in-Picture Charting**: For telehealth sessions, allows floating video window so clinicians can chart in background while maintaining visual contact with patient. Split screen option also available to view patient video and chart simultaneously.
+- **Chart Duplication**: Allows practitioners to duplicate previous chart entries to reuse content as starting point for new notes. Saves time when documenting similar sessions or ongoing treatment.
+- **Chart Export/Print**: Export individual or multiple chart entries to PDF or print. Batch Chart Export available for practitioners to export all chart entries. Supports medical legal requests and referrals to other practitioners.
+- **Outcome Measure Surveys**: Clinical surveys with scoring to quantify patient experience at a point in time and over course of care. Can be sent before/after appointments clinic-wide or individually (daily/weekly/monthly). Results are scored and tracked over time but do not auto-populate into chart notes.
+- **CPT & Diagnosis Codes**: Add CPT and ICD-10 diagnosis codes to chart entries and appointments. Supports Box 21 on CMS 1500 forms (up to 12 diagnosis codes). ICD-10 code set updates included. Requires US Insurance billing configuration.
+- **Prescriptions**: Create prescription templates using chart parts with search function to compile prescriptions. No medication reconciliation or tracking capabilities documented.
+- **Day View Sign & Lock Workflow**: Dedicated practitioner view showing schedule with lock/unlock icons indicating charting progress. Allows quick visual assessment of charting completion status across appointments. Administrative staff do not see these indicators.
+- **Chart Entry Filtering**: Filter chart entries by status (draft vs signed), date ranges, and other criteria. Filter/Export option available in patient chart tab. Can identify incomplete documentation via Dashboard.
+- **Intake Forms**: Customizable intake forms that can collect patient information before appointments. Can be used for consent to record (for AI Scribe), treatment consent, and patient history. Forms can use same chart parts as charting templates.
+- **Clinical Surveys**: Collect information from patients before or after scheduled appointments, or at time of online booking. Can be configured as Outcome Measure Surveys with scoring. Separate from chart entry workflow.
+
+### Workflow Support Before, During, and After Sessions
+
+- No autosave capability documented - chart entries remain in draft until manually signed
+- No version history or rollback functionality
+- No recovery mechanism for lost/unsaved work documented
+- Cannot batch sign multiple chart entries at once
+- Phrases limited to 2000 characters per snippet
+- Phrases only work in charting area (not usable in other areas of Jane)
+- Chart entries must be signed individually
+- Treatment plans limited to 3 diagnosis codes
+- No automatic data flow between outcome measures, treatment plans, and chart notes
+- AI Scribe requires patient consent to record - must be managed separately per regulatory body requirements
+
+### Relevant AI Features in This Area
+
+- **AI Scribe**: Converts audio recordings of appointments into SOAP notes using customizable prompts. Supports live recording during session or upload of pre-recorded audio. Clinicians can review and edit AI-generated draft before signing and locking. Fully integrated into Jane's charting workflow via Smart SOAP Note chart part.
+
+### Key Limitations or Missing Capabilities
+
+- No autosave capability documented - chart entries remain in draft until manually signed
+- No version history or rollback functionality
+- No recovery mechanism for lost/unsaved work documented
+- Cannot batch sign multiple chart entries at once
+- Phrases limited to 2000 characters per snippet
+- Phrases only work in charting area (not usable in other areas of Jane)
+- Chart entries must be signed individually
+- Treatment plans limited to 3 diagnosis codes
+- No automatic data flow between outcome measures, treatment plans, and chart notes
+- AI Scribe requires patient consent to record - must be managed separately per regulatory body requirements
+
+### Pricing / Gating Notes
+
+- **Balance**: $54/month
+- **Practice**: $79/month + $17.50/month per part-time practitioner + $35/month per full-time practitioner
+- **Thrive**: $99/month + $20/month per part-time practitioner + $40/month per full-time practitioner
+- AI Scribe Unlimited: $15/month per practitioner (5 free notes/month included on all plans)
+- Part-time practitioners: $17.50/month (Practice) or $20/month (Thrive) - for staff working <24 booked hours/week
+- Full-time practitioners: $35/month (Practice) or $40/month (Thrive) - for staff working 24+ booked hours/week
+- Integrated Outbound Fax: Requires separate Documo subscription
+- US Insurance Billing: Add-on required for CPT/diagnosis code features (pricing not publicly documented)
+- Group Telehealth: Add-on available (pricing not publicly documented)
+
+### Short Summary
+
+This summary highlights how the competitor supports clinical documentation, note workflows, and related AI assistance.
+
+_Raw data source: raw/jane.json_
+
+---
+

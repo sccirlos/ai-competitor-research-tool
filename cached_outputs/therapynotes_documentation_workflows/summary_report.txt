@@ -1,0 +1,50 @@
+Documentation & Clinical Workflows Competitor Research Summary - 2026-04-14
+============================================================
+
+COMPETITOR: TherapyNotes
+------------------------------------------------------------
+1. Documentation Workflow Overview
+- Features found: 15
+
+2. Core Note and Treatment Plan Capabilities
+- Progress Notes (SOAP/DAP/BIRP): SOAP, DAP, and BIRP format progress note templates with structured fields (diagnosis, medications, mental status, risk assessment) and free-text areas. Auto-populates diagnosis, medications, and treatment objectives from prior notes and Treatment Plan.
+- Custom Progress Note Templates: Template builder allowing Practice/Clinical Administrators to create custom Progress Note templates. Can start from SOAP, DAP, BIRP, or Standard template and add/remove/reorder components. Active/inactive status controls clinician visibility.
+- Treatment Plans: Structured treatment planning with diagnosis, presenting problem, treatment objectives, and frequency. Created after Intake Note (prompted via To-Do). Diagnosis and objectives auto-pull into subsequent Progress Notes.
+- Auto-Save and Recovery: Notes auto-save content approximately every 60 seconds while working. If browser crashes or closes, auto-saved content can be recovered when note is re-opened. System prompts to restore auto-saved data.
+- Quick History: Allows clinicians to view specific fields from previous notes and pull that information forward into the current note with one click. Supports continuity across sessions (medications, interventions, etc.).
+- Draft Saving and To-Do Integration: Notes can be saved as drafts multiple times before signing. Unsigned notes generate To-Do list items for tracking. Drafts accessible from To-Do list, calendar, or patient Documents tab.
+- Electronic Signature and Note Locking: Clinicians electronically sign notes when complete, finalizing them for billing and compliance. Signed notes are locked (amendment workflow not documented).
+- Integrated Diagnosis Coding: Searchable DSM-5 and ICD-10 diagnosis databases built into notes. Diagnosis codes auto-populate from Treatment Plan or most recent note. Supports multiple diagnoses with descriptions and justifications.
+- Medication Management in Notes: Medication fields with UMLS RxNorm database auto-suggest for generic, brand-name, and supplements. Captures dose, frequency, symptoms treated, and instructions. Medications auto-pull from previous notes or Client History Form.
+- Risk Assessment Documentation: Structured risk assessment fields for suicidal, homicidal, self-harm, and other risk areas. Captures level of risk, intent, plans, means, risk factors, and protective factors. Supports multiple risk areas per note.
+- Current Mental Status Exam: Comprehensive mental status exam fields in Progress Notes. One-click autofill for 'All Normal' or 'All Not Assessed'. Individual fields can be selected from dropdown or custom text entry.
+- Outcome Measures Integration: Outcome measures can be sent to clients, completed (by client or clinician), and viewed within Progress Notes. Includes timeline charts and insights for tracking progress over time.
+- Psychotherapy Notes (Process Notes): Separate psychotherapy note type for therapist's personal observations and impressions, kept separate from medical record per HIPAA. Different access controls than progress notes.
+- Activity Log and Audit Trail: Activity log tracks user logins, failed attempts, note editing, note signing, and other user activities. Supports audit readiness and compliance monitoring.
+- Appointment-Linked Note Creation: Notes must be linked to scheduled appointments with appropriate service type. Note type determined by appointment service type. Creates structured workflow but requires calendar scheduling for all documentation.
+
+3. Relevant AI Features in This Area
+- TherapyFuel Scribe: Records and transcribes therapy sessions (in-person or telehealth), then generates progress notes from the transcript. Requires minimum 8 minutes of audio. Transcript processing takes up to 5 minutes. Clinician must review and edit generated content before signing.
+- Progress Note Generation from Session Summary: Clinician enters brief session summary text, and AI generates Subjective, Objective, Assessment, and Plan sections. Works with any Progress Note template (SOAP, DAP, BIRP, custom). Clinician reviews and edits before finalizing.
+- Client History Summary: AI-generated summary of patient's Client History Form responses, appearing at top of intake forms and when writing Intake Notes. Used for session prep and quick chart review. Clinicians can rate summary quality for improvement.
+- Contact Note Generation: Generates Contact Notes from secure message threads, summarizing client interactions for record-keeping. Includes 'Adjust Tone' feature (formal, concise, descriptive). Primarily for non-session documentation.
+
+4. Key Limitations or Missing Capabilities
+- Notes cannot be created without scheduled appointment - no standalone documentation
+- Auto-save occurs every ~60 seconds (not instant, not configurable)
+- TherapyFuel Scribe requires minimum 8 minutes of session audio to generate transcript
+- Scribe transcript processing takes up to 5 minutes after session ends
+- Custom template creation/editing restricted to Practice/Clinical Administrator roles
+- No offline mode or mobile app mentioned for documentation
+- Split-screen note review requires manual window management (drag tabs)
+- No version history or change tracking for draft notes mentioned
+- Amendment workflow for signed notes not documented
+
+5. Pricing / Gating Notes
+- TherapyFuel AI: $40/month per clinician
+- Premium Telehealth: $15/month per clinician
+- Electronic Billing: $0.14 per electronic claim, ERA claim, and eligibility request
+
+Raw data stored in raw/therapynotes.json
+
+============================================================

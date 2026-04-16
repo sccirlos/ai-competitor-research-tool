@@ -1,0 +1,20 @@
+Custom Competitor Research Summary - 2026-04-14
+========================================
+
+COMPETITOR: PracticeFusion
+Pricing Tiers found: 2
+Total Features found: 10
+AI Features found: 1
+Branded Solutions found: 0
+Technical Constraints: Patient portal messaging requires patients to register for Patient Fusion portal - cannot message unregistered patients, Patient messaging is disabled by default and must be enabled by account administrator, Direct messaging requires provider verification and Direct address provisioning, Multi-recipient message threading limitation: if one recipient replies without including all original recipients, the message thread drops from other users' inboxes, Sender must be in contacts/directory to reply to messages from providers outside the Practice Fusion network, No native two-way SMS - requires separate Updox Premium integration, Practice Fusion Scribe in beta with 30-day data retention limitation
+Additional Costs: Updox Premium integration for SMS texting, broadcast messaging, and unlimited faxing (pricing not disclosed), Practice Fusion Billing Services (optional, pricing varies), Taxes not included in base pricing
+Raw data stored in raw/practicefusion.json
+
+  Pricing Tiers:
+  - Base Plan: $199 per provider per month
+  - Updox Premium Add-on: Not disclosed (separate purchase)
+
+  AI Features:
+  - Practice Fusion Scribe: AI-powered clinical documentation assistant that records patient-clinician conversations, automatically transcribes them, and generates structured clinical notes with evidence mapping. Currently in limited beta release. Note: This is NOT a messaging/collaboration AI feature. [GATED]
+
+  AI Maturity: Limited AI maturity in messaging/collaboration domain. Only AI feature is Practice Fusion Scribe (clinical documentation), which is unrelated to messaging workflows. No AI-powered features for message drafting, summarization, inbox triage, routing, or communication assistance. The platform lacks modern AI capabilities for team collaboration and patient communication optimization.

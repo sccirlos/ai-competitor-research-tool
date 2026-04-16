@@ -1,0 +1,96 @@
+# Competitive Research Summary
+
+**Focus Area:** Documentation & Clinical Workflows
+
+**Generated:** 2026-04-14
+
+**Competitors Analyzed:** Blueprint
+
+---
+
+## Blueprint
+
+### Documentation Workflow Overview
+
+- Documentation-related features found: 23
+
+### Core Note and Treatment Plan Capabilities
+
+- **Progress Note Creation and Management**: Create, edit, review, sign, and lock progress notes in 15+ formats including SOAP, DAP, BIRP, GIRP, PIRP, SIRP, PIE, intake notes, discharge summaries, psychotherapy notes, and admin notes. Supports both manual creation (free tier) and AI-generated notes (paid tiers).
+- **Treatment Plan Creation and Updates**: Create and update treatment plans including assessment, goals, objectives, interventions, and progress tracking. Can be created manually or AI-generated from session transcriptions. Treatment plans link to progress notes and can be updated during post-session wrap-up.
+- **Note Preferences and Customization**: Extensive customization including note length, medical necessity language, mental status exam sections, diagnostic symptom amplification, intervention detail, action items, client quotes, formatting, clinician/client titles, theoretical orientation (CBT, DBT, EMDR, psychodynamic), session type (telehealth/in-person), and session format (individual/couples). Preferences save across all future notes.
+- **Clinical Templates**: Clinical templates for specific modalities (e.g., EMDR therapy). Enterprise tier includes fully customized documentation templates built to match specific practice styles and payer requirements.
+- **Customizable Forms and Consents**: Create, edit, and send customizable intake forms, questionnaires, and consent documents. Clients can complete or sign digitally. All completed forms automatically saved to client record.
+- **One-Click Session Finalization**: Single-screen, single-click workflow to finalize notes, sign and lock documentation, update treatment plans, submit insurance claims, and process credit card payments immediately after session.
+- **Session Recording (Multiple Methods)**: Record sessions via live web recording, mobile app (iOS) for in-person and telehealth, audio dictation, or file upload. Supports multiple capture methods for flexibility.
+- **Chrome Extension for EHR Overlay**: Chrome extension allows clinicians to use Blueprint on top of existing EHR without switching tabs. Provides side-by-side transcript and note viewing.
+- **Direct EHR Integration**: Direct EHR integrations for real-time note transfers and client data importing with any EHR that allows third-party integrations. Specific integrations include AdvancedMD and Healthie.
+- **API Access**: API access and developer support for flexible embedding and customized experience.
+- **Measurement-Based Care Integration**: Integration with validated assessment tools including PHQ-9, GAD-7, and other patient-reported outcome measures. Visual diagrams of client mood, energy, sleep, and social connectedness. Assessment results flow into session prep summaries.
+- **Guided Digital Interventions**: Access to evidence-based digital interventions and homework during sessions without breaking flow or hunting for resources. Can assign worksheets and interventions for next session.
+- **Blueprint Sessions Workflow**: Structured session workflow following natural therapy flow: check-in with assessment review, recap of previous session, homework review, intervention delivery, planning for next session, and psychotherapy notepad for private notes.
+- **Private Psychotherapy Notes**: Private psychotherapy notes kept separate from client's medical record with enhanced HIPAA protection. Digital notepad for informal notes during session. Not visible to clients and not included in standard documentation snippets.
+- **Prior Note Access and Continuity**: View and reference past session notes. Documentation snippets can be copied and pasted for continuity of care. Access to full session history.
+- **After-Visit Summaries**: AI-generated after-visit summaries for client communication following sessions.
+- **Mobile App (iOS)**: iOS mobile app for capturing in-person sessions, telehealth sessions, and audio dictations. Documentation automatically synced across all devices and web interface.
+- **Scheduling and Calendar**: Powerful, flexible calendar to run practice. Integrated with session capture and documentation workflow.
+- **Telehealth**: Secure, reliable, HIPAA-compliant virtual sessions built into platform.
+- **Billing and Insurance**: Integrated insurance billing and credit card payments. Can submit claims and process payments from one-click finalization screen.
+- **SSO and Directory Sync**: Single Sign-On and Directory Sync for managing users at scale with role-based permissions.
+- **Population-Level Analytics**: Administrative visibility into population-level trends, program performance, and benchmarking against dataset of 7 million assessments.
+- **Data Import and Onboarding**: Guided onboarding to import and organize existing EHR data including clients, notes, forms, and billing. Supports migration from SimplePractice, TherapyNotes, Theranest, and many others.
+
+### Workflow Support Before, During, and After Sessions
+
+- Autosave functionality not explicitly documented - unclear if drafts auto-save during editing
+- No version control or recovery capabilities mentioned for notes
+- Symptom Tracker Check-ins not currently supported within session workflow
+- Mobile app users sometimes need to switch to web version to change note layouts or session types if not selected initially
+- Integration depth with EHRs varies - some have direct integration, others rely on Chrome extension or manual transfer
+- Drop-down menus for theoretical orientation and session types are requested features but implementation unclear
+- Treatment plans not natively connected to outcomes tracking over time
+- Limited visibility into therapeutic alliance dynamics or in-session progress beyond transcription capture
+- Internal scoring models for AI insights not fully disclosed
+
+### Relevant AI Features in This Area
+
+- **AI Scribe / Session Transcription**: Records and transcribes therapy sessions in real-time from multiple sources (web, mobile app, dictation, file upload). Supports multilingual functionality and improves accuracy through repeated use and clinician corrections.
+- **AI Progress Note Generation**: Automatically generates progress notes from session transcriptions in 15+ formats (SOAP, DAP, BIRP, GIRP, PIRP, SIRP, PIE, intake, discharge, psychotherapy, admin notes). Includes extensive customization via note preferences for length, medical necessity language, mental status exams, diagnostic symptoms, interventions, action items, and quotes. Generation typically completes in under 1 minute. Requires clinician review and approval before signing.
+- **AI Treatment Plan Drafting**: Drafts treatment plans during sessions based on transcribed clinical content. Includes assessment, goals, objectives, interventions, and progress tracking. Can be updated and refined during post-session wrap-up. Plans can be linked to progress notes.
+- **AI Session Prep / Pre-Session Insights**: Analyzes client data between sessions to surface personalized summaries including last session highlights, current session focus areas, structured session plan, progress insights from assessments, and deeper insights. Includes visual diagrams of client mood, energy, sleep, and social connectedness.
+- **Clinical Decision Support**: Suggests evidence-based assessments (PHQ-9, GAD-7, other validated measures), digital homework, and interventions during session prep and in-session. Provides measurement-based care guidance and intervention selection support.
+- **AI Chat Assistant**: Allows clinicians to chat with AI between sessions to ask clinical questions, assign tasks related to documentation, scheduling, and billing, surface deeper insights into client progress, and support practice growth. Insurance outreach feature coming soon.
+- **Magic Edit / Note Regeneration**: Allows clinicians to make manual adjustments to AI-generated notes through 'Magic Edit' feature. Supports section-level regeneration and can save persistent instructions for specific note sections (e.g., longer subjective section in SOAP notes).
+
+### Key Limitations or Missing Capabilities
+
+- Autosave functionality not explicitly documented - unclear if drafts auto-save during editing
+- No version control or recovery capabilities mentioned for notes
+- Symptom Tracker Check-ins not currently supported within session workflow
+- Mobile app users sometimes need to switch to web version to change note layouts or session types if not selected initially
+- Integration depth with EHRs varies - some have direct integration, others rely on Chrome extension or manual transfer
+- Drop-down menus for theoretical orientation and session types are requested features but implementation unclear
+- Treatment plans not natively connected to outcomes tracking over time
+- Limited visibility into therapeutic alliance dynamics or in-session progress beyond transcription capture
+- Internal scoring models for AI insights not fully disclosed
+
+### Pricing / Gating Notes
+
+- **Core**: Free
+- **Plus**: Starting at $0.99 per session
+- **Pro**: Starting at $0.99 per session
+- **Enterprise**: Custom pricing
+- Session credits: Starting at $0.99 per session (usage-based pricing)
+- Credit card processing: 3.15% + $0.30 per transaction (free until May 2026)
+- Insurance claims submission: $0.30 per claim (free until May 2026)
+- Eligibility checks: $0.15 per check (free until May 2026)
+- Enterprise: Custom pricing with volume discounts for organizations
+
+### Short Summary
+
+This summary highlights how the competitor supports clinical documentation, note workflows, and related AI assistance.
+
+_Raw data source: raw/blueprint.json_
+
+---
+

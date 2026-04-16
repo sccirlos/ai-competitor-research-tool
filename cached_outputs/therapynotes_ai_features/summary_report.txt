@@ -1,0 +1,57 @@
+Custom Competitor Research Summary - 2026-04-14
+========================================
+
+COMPETITOR: TherapyNotes
+Pricing Tiers found: 5
+Total Features found: 0
+AI Features found: 8
+Branded Solutions found: 1
+Technical Constraints: TherapyFuel currently supports Therapy Progress Notes and Treatment Plans only - not yet compatible with group notes, couples/family therapy, or other specialized note templates, Only one Approach to Treatment can be selected per note generation (though interventions from multiple approaches can be manually added), Transcripts from TherapyFuel Scribe are automatically deleted 30 days after session or when note is signed, whichever comes first - limited troubleshooting support available after deletion, No API access for AI features publicly documented, No offline/on-premise deployment - cloud-based only, TherapyFuel Scribe requires manual start/stop during session (not auto-activated)
+Additional Costs: Real-Time Eligibility (RTE) Verification: $0.14 per request, Electronic Insurance Claims: $0.14 per electronic claim, Paper Insurance Claims: $1.00 per mailed claim, Electronic Remittance Advice (ERA): $0.14 per claim in ERA, Appointment Reminders (text/voice): $0.14 per reminder, Credit Card Processing: 3.1% + $0.30 per transaction, ePrescribe: $65/month per prescriber
+Raw data stored in raw/therapynotes.json
+
+  Pricing Tiers:
+  - Solo: $69/month
+  - Group: $79/month for first clinician, $50/month per additional clinician
+  - Enterprise: $79/month for first clinician, $50/month per additional clinician (minimum 30 users)
+  - TherapyFuel AI Add-on: $40/month per clinician
+  - Premium Telehealth Add-on: $15/month per clinician
+
+  Branded Solutions:
+  - TherapyFuel: AI-powered documentation suite designed to automate clinical note-taking, treatment planning, insurance data entry, and messaging summaries for behavioral health providers
+
+  AI Features:
+  - AI Progress Note Generation (from session summary): Clinician enters treatment approach and brief session summary; AI generates SOAP (Subjective, Objective, Assessment, Plan) note fields. System uses minimal PHI (pronouns, age) from client profile to personalize output. [GATED]
+  - TherapyFuel Scribe (AI Session Transcription): Records in-person or telehealth therapy sessions, generates full session transcript, uses transcript to draft progress notes. Audio recording starts/stops manually by clinician. [GATED]
+  - AI Treatment Plan Generation: Generates personalized treatment plans with goals, objectives, and interventions based on clinician-entered treatment approach, clinical targets, diagnosis, and presenting problem. Number of objectives/interventions per goal customizable in user settings. [GATED]
+  - Client History Form Summarization: AI-generated summary of patient's Client History Form responses. Appears at top of form and during Intake Note writing for quick reference. 
+  - AI Contact Note Generation (from Secure Messaging): Generates contact notes from secure messaging conversations. Clinician navigates to message thread, clicks 'Generate Contact Note', AI summarizes interaction for record-keeping. 
+  - Insurance Card Auto-Population (OCR): Clinician uploads or photographs patient insurance card; AI extracts and auto-fills policy details in patient billing settings. [GATED]
+  - Adjust Tone: Instantly refines note or message tone with one click. Options: Formal, Professional, Concise, Descriptive. Available for all note types and Secure Messaging. [GATED]
+  - Clinical Voice Settings (Personalization): Customizable preferences for AI-generated notes: patient/clinician terminology, note length (concise vs verbose), formality level, note tone (neutral/conversational/scholarly), homework assignment frequency, language. Settings stored per clinician user profile. [GATED]
+
+  AI Maturity: 
+TherapyNotes has positioned TherapyFuel as a comprehensive AI documentation suite, not standalone point solutions. Launched with Client History Summarization as first AI feature, then rapidly expanded to full suite including transcription, progress notes, treatment plans, and tone adjustment. 
+
+**Maturity Level: Mid-stage adoption**
+- Technology: Uses stock LLM from third-party vendor (not custom-trained model), relying on prompt engineering rather than proprietary AI training
+- Privacy-first approach: HITRUST AI certified, strong BAA framework, no data retention, vendor contractually prohibited from training on PHI
+- Human-in-the-loop design: All AI outputs require clinician review/approval before finalization
+- Limitations acknowledged: Bias cannot be fully eliminated, not intended as clinical decision-making tool
+- Pricing: Per-clinician subscription model ($40/mo) rather than usage-based, with practice-wide benefits if 1+ clinician subscribes
+
+**Notable gaps:**
+- No disclosure of which LLM vendor/model used (OpenAI GPT, Anthropic, etc.)
+- No published accuracy rates or clinical validation studies
+- No mention of hallucination detection/mitigation strategies
+- Limited template support (individual therapy only, no groups/couples yet)
+- No API access documented for AI features
+- No on-premise deployment option
+
+**Strengths:**
+- Fully integrated into existing EHR workflow (no separate login/platform)
+- Strong privacy/security posture with third-party certifications
+- Transparent about limitations and bias risks
+- Clinician can customize AI "voice" extensively
+- Audio immediately deleted after transcription (privacy-by-design)
+

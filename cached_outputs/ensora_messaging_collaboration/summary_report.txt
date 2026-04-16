@@ -1,0 +1,45 @@
+Custom Competitor Research Summary - 2026-04-14
+========================================
+
+COMPETITOR: Ensora
+Pricing Tiers found: 3
+Total Features found: 10
+AI Features found: 2
+Branded Solutions found: 0
+Technical Constraints: Secure Messaging requires Client Portal subscription per therapist, Practice Chat must be activated by Organization Administrator (unclear if additional cost), Telehealth is optional add-on in Essentials tier, unlimited only in Premier, AI Session Assistant currently limited to recorded telehealth sessions only (not in-person), Staff messaging appears to be 1:1 or simple group - no mention of channels, teams, or advanced routing, No public documentation on message history controls when adding participants, No mention of shared inbox or centralized message assignment/routing features, Client contact messaging requires specific permission configuration
+Additional Costs: Telehealth add-on for Essentials tier (optional, pricing not publicly disclosed), Additional therapist licenses beyond base subscription, Practice Administrator seats at $19/user/month, Claims processing beyond included limits (30 free per month in Advanced, unlimited in Premier), Eligibility checks beyond included limits (30 free per month in Advanced, unlimited in Premier), Text & phone reminders beyond included limits (30 free per month in Advanced, unlimited in Premier), Client Portal subscription per therapist (first license may be free, then $6/month per additional therapist - based on external sources), Credit card payment processing fees (not disclosed)
+Raw data stored in raw/ensora.json
+
+  Pricing Tiers:
+  - Essentials: $29/therapist/month (monthly) or $27/therapist/month (annual)
+  - Advanced: $59/therapist/month (monthly) or $54/therapist/month (annual)
+  - Premier: $89/therapist/month (monthly) or $82/therapist/month (annual - estimated from pattern)
+
+  AI Features:
+  - AI Session Assistant: Generates structured SOAP notes from recorded telehealth sessions in minutes. Built specifically for mental health documentation, capturing interventions, client themes, and clinical details that generic AI misses. Currently works with recorded telehealth sessions; in-office AI scribe for in-person sessions is planned. [GATED]
+  - AI Notes Enhancement: Available by default for new customers starting May 21, 2025. Enhances documentation capabilities with AI assistance for mental health notes. 
+
+  AI Maturity: TheraNest demonstrates moderate AI maturity with focused mental health applications:
+
+**Current AI Capabilities:**
+- AI Session Assistant for telehealth documentation (generates SOAP notes from recorded sessions)
+- AI Notes Enhancement (default for new customers as of May 2025)
+- Both solutions are HIPAA-compliant and HITRUST certified
+
+**AI Strengths:**
+- Domain-specific AI built for mental health (captures interventions, client themes, clinical details)
+- Integration with existing telehealth workflow
+- Emphasis on compliance and security for sensitive health data
+
+**AI Limitations:**
+- AI Session Assistant limited to recorded telehealth sessions only (not in-person sessions yet)
+- In-office AI scribe is planned but not yet available
+- No AI-powered features mentioned for messaging, scheduling, or administrative tasks
+- Underlying AI technology/models not publicly documented
+- Limited transparency on how AI processes and stores clinical data
+
+**Competitive Position:**
+- Mid-tier AI maturity focused on clinical documentation automation
+- Lags behind competitors offering real-time AI scribes for in-person sessions
+- Ahead of basic EHRs with no AI capabilities
+- AI features available across all pricing tiers (not gated to premium plans)

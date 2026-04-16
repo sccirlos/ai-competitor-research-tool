@@ -1,0 +1,67 @@
+Documentation & Clinical Workflows Competitor Research Summary - 2026-04-15
+============================================================
+
+COMPETITOR: Ensora
+------------------------------------------------------------
+1. Documentation Workflow Overview
+- Features found: 16
+
+2. Core Note and Treatment Plan Capabilities
+- Progress Note Creation: Create progress notes from scheduled appointments (Agenda) or directly from Client Notes section. Supports Standard Note forms (SOAP, DAP), Dynamic Progress Note Forms with customizable fields via Dynamic Form Builder, and specialty-specific Standard Form Sets (Mental Health, Substance Use 245G, ARMHS, CTSS, EIDBI, Housing, 245F). Notes auto-populate basic appointment data (client ID, service dates, times, duration, place of service, providers). Service entry must be completed before adding progress notes.
+- Autosave and Draft Recovery: System autosaves as clinicians fill note forms, with message in top right corner. 'View Draft Copies of This Note' feature allows retrieval of unsaved work. Drafts disappear once note is formally saved.
+- Copy from Last Session: Reuse note content from previous sessions. Pulls text content but excludes diagnosis codes (must be manually linked each time). Active medications from e-prescribe pull into new notes automatically, but changes in e-prescribe do not update existing notes retroactively.
+- Dynamic Form Builder: Create customizable intake forms, progress notes, and case documentation with standard elements (static text, open text fields, lists, checkboxes) and dynamic elements (pulled from client details and case information). Dependencies on diagnosis, treatment plan, and treatment goals.
+- Sign and Lock Notes: Click SIGN button, select signing party, capture signature via mouse/touchscreen, and note locks. Once signed, notes cannot be edited—only addendums can be added (which also require signing). Unlocking requires manual deletion of ALL existing signatures. Notes cannot be signed if appointment status is 'Upcoming'. Administrators can configure settings to prevent signing notes lacking diagnosis codes.
+- Note Addendums: Add addendums to signed notes without unlocking original. Addendums can also be signed. No limit on number of addendums.
+- Supervisory Review and Co-Signing: Send signed notes to supervisor inbox for review or Request Review/Signature Requested. Supports supervisory co-signing workflows. Permissions restrict note creation to assigned therapists or administrators.
+- Treatment Plan Creation and Updating: Create treatment plans from Client Profile → Notes → Treatment Plans tab. Fill in Diagnostic Impressions (can pull from initial assessments), Behavior Definitions, Goals, and Objectives. Signed treatment plans cannot be edited. To update, create new plan—system automatically carries over goals and objectives from previous version, creating linked history of progress and adjustments.
+- Dataflow Between Clinical Documents: Automatically populates information from one document to the next within Standard Form Sets (assessment → treatment plan → progress note) to eliminate manual re-typing. Diagnostic Impressions and History of Treatment Goals flow from Initial Assessment.
+- Mental Status and Risk Assessment Hybrid Input: Mental Status and Risk Assessment fields support hybrid approach: select from standardized list of phrases OR type free-text to create new descriptors.
+- Case-Based Clinical Organization: Clinical information organized in Cases (separate from administrative Client Details), containing Initial Assessments, Diagnostic Codes, Progress Notes, and Treatment Plans. Staff must be assigned to both Client AND specific Case to view or create notes (multi-step manual process).
+- E-Prescribe Integration with Notes: Active medications from e-prescribe pull into new or copied notes automatically. However, changes in e-prescribe do not update existing notes; new note must be created to reflect changes. Signed/approved notes lock medication data; printed version needed to view medications active at that time.
+- Missing Progress Note Report: Report to track missing progress notes across practice.
+- Progress Note Signature Report: Report to track note signature status and compliance.
+- Template Switching During Drafting: Clinicians can switch note templates while writing a note. However, changing template mid-drafting causes data loss in custom fields.
+- Default Note Type per Therapist: Set default note form template for individual therapists to streamline workflow.
+
+3. Relevant AI Features in This Area
+- AI Notes Enhancement: Field-level AI suggestions to improve manually-written clinical notes. Improves clarity and professionalism, corrects spelling/grammar, expands abbreviations (e.g., DOB to date of birth), translates ICD-10 codes to full written diagnoses, and organizes bullet points into paragraphs. Clinician clicks 'Improve with AI' in specific fields (Subjective, Objective, Assessment, Plan, Session Focus, Therapeutic Intervention), reviews suggestions, and chooses to Replace or discard.
+- AI Session Assistant - Session Transcription and Note Generation: Records telehealth sessions with explicit consent from clinician and client, then auto-generates SOAP-formatted session summaries capturing interventions, clinical themes, symptoms, and progress. Draft is pulled into an AI field in the note template for clinician review, editing, and signing. Vendor claims 5-10 hours/week time savings. Recordings auto-deleted within 24 hours; transcripts not stored. Telehealth only (not available for in-person sessions).
+- AI Case Summaries: Generates structured overviews of client clinical history and progress by analyzing ALL signed progress notes, treatment plans, and assessments across all past cases. Highlights nuanced patterns and trends at a glance. Designed for pre-session prep, supervision, consultations, and clinician handoffs. Works for both telehealth and in-person clients. Eliminates need to scroll through individual notes or switch tabs.
+
+4. Key Limitations or Missing Capabilities
+- Cannot import external note templates from other systems
+- Cannot add custom fields to standard Progress Note template (only Dynamic Forms allow customization)
+- Template switching mid-drafting causes data loss in custom fields
+- Template section removal is organization-wide setting, not per-therapist preference
+- No native spell-check (browser-dependent)
+- No documented snippets, macros, or text expansion shortcuts
+- No documented mobile/tablet optimized in-session note-taking
+- System designed for structured medical checkboxes/codes rather than therapy's narrative/relational nature
+- Standard formats don't fit couples, family, or group work easily without customization
+- AI Session Assistant only works for telehealth sessions (not in-person)
+- AI Session Assistant requires client consent (some decline)
+- No automated flow of treatment plan data into individual progress notes beyond AI Case Summary
+- E-prescribe medication changes do not update existing notes retroactively
+- Diagnosis codes do not copy when using 'Copy from last session' feature
+- Service entry must be completed before progress note can be added
+- Notes cannot be signed if appointment status is 'Upcoming'
+- Unlocking signed note requires manual deletion of all previous signatures
+- Staff must be manually assigned to both Client AND specific Case to view/create notes
+
+5. Pricing / Gating Notes
+- AI Session Assistant: $35/provider/month (promotional $17.50 for 6 months)
+- Wiley Treatment Planner: $25/therapist/month (add-on for Advanced; included in Premier)
+- Telehealth (Individual and Group): $12/therapist/month (add-on for Essentials/Advanced; included in Premier)
+- Ensora eRx and PDMP: $135 one-time setup + $45/therapist/month
+- Additional Practice Administrators: $19/month (Essentials/Advanced) or $29/month (Premier)
+- Annual AMA CPT License Fee: $19.50/therapist (billed every December)
+- Claims processing (Advanced tier): 30 free/month, then $0.23/claim (unlimited in Premier)
+- Eligibility checks (Advanced tier): 30 free/month, then $0.25/check (unlimited in Premier)
+- Text and phone reminders (Advanced tier): 30 each/month, then $0.10/reminder (unlimited in Premier)
+- Hassle-free payment processing: 2.99% fee + $0.30/transaction
+- Revenue Cycle Management (RCM): Priced separately for Essentials and Advanced tiers
+
+Raw data stored in raw/ensora.json
+
+============================================================

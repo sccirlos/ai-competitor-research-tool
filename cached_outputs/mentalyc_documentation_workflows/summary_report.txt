@@ -1,0 +1,66 @@
+Documentation & Clinical Workflows Competitor Research Summary - 2026-04-14
+============================================================
+
+COMPETITOR: Mentalyc
+------------------------------------------------------------
+1. Documentation Workflow Overview
+- Features found: 17
+
+2. Core Note and Treatment Plan Capabilities
+- Progress Note Creation (AI-Generated): AI generates structured clinical notes from recorded, uploaded, dictated, or typed session content. Supports multiple input methods: live recording, audio file upload, voice-to-text dictation, manual typing. 10-15 minute processing time.
+- Template System (100+ Templates): SOAP, DAP, BIRP, GIRP, PIE, SIRP, EMDR, Play Therapy, Psychiatry, and 100+ other formats. Custom template builder allows selection of sections to include/exclude. Different client types: Individual, Child, Couple, Family, Group.
+- Custom Template Builder: Visual interface allows clinicians to select which sections to include or exclude from notes (e.g., Presenting Problems, Psychological Factors, Biological Factors, EMDR-specific sections). Templates control what sections AI includes in generated note.
+- Treatment Plan Generation (AI): AI generates SMART goals and treatment plans from session notes. Goals derived from session content, not generic libraries. Diagnosis optional. Goals link to progress tracking. Clinician reviews, edits, approves.
+- Note Editing and Finalization: Clinicians can freely edit any section of AI-generated notes. Can add custom content, diagnoses, risk notes. Sign and finalize when complete. Audio recordings deleted after note creation (max 3-day retention).
+- EHR Integration (Browser Extension): One-click transfer of notes to EHR via Chrome browser extension. Works with SimplePractice, TherapyNotes, Jane App, and most web-based EHRs. One-way transfer (copy note to EHR); not bidirectional API integration.
+- Session Recording (Live): Live recording during in-person or telehealth sessions (with client consent). Recording is unobtrusive and happens in background. No real-time transcription displayed during session.
+- Audio File Upload: Upload pre-recorded session audio files in various formats. AI processes uploaded audio to generate notes.
+- Prior Session Referencing (Continuity of Care): Notes automatically reference prior sessions to maintain the 'golden thread' of treatment. Treatment plans pull from session history. Progress tracking aggregates data across sessions.
+- Supervision Notes: Generate supervision session notes. Available for supervisors and supervisees.
+- Group Therapy Notes: Generate individual progress notes for each group member in group therapy sessions.
+- Client Session Summaries: Generate summaries of sessions that can be shared with clients.
+- Consent Forms & BAA: Ready-to-use consent form templates and Business Associate Agreement (BAA) available within app. BAA can be signed directly in app profile.
+- Session Analytics: Analytics on session content and patterns. Part of AI Progress Tracker functionality.
+- Child, Couple, and Family Therapy Support: Specialized templates and note formats for child, couple, and family therapy sessions.
+- EMDR, Play Therapy, Psychiatry Modalities: Specialized templates for EMDR, Play Therapy, and Psychiatry sessions with modality-specific sections.
+- Progress Charts (Symptom & Goal Tracking): Visual charts showing symptom trends and goal attainment over time. Part of AI Progress Tracker. Can review before sessions to prepare.
+
+3. Relevant AI Features in This Area
+- AI Progress Note Generation: Generates structured clinical notes from recorded, uploaded, dictated, or typed session content. Supports SOAP, DAP, BIRP, GIRP, PIE, SIRP, EMDR, Play Therapy, Psychiatry, and 100+ other formats. 10-15 minute processing time after session.
+- AI Treatment Planner: Generates SMART treatment goals and intervention plans from saved session notes. Goals derived from documented symptoms and session content, not generic libraries. Diagnosis is optional. Goals link to progress tracking. Clinician can edit, refine, or replace suggested goals before approving.
+- AI Transcription / Voice-to-Text Dictation: Clinicians can dictate session summaries via voice instead of typing or recording full session. Transcription is processed after dictation (not real-time). Alternative to live recording or manual typing.
+- Alliance Genie™ (AI Therapeutic Alliance Tracking): Analyzes therapeutic relationship across 27 clinical areas (emotional bond, collaboration, pacing, ruptures, engagement shifts, resistance patterns, sensitive topic handling). Provides session-level feedback like a supervisor would. Fully automated; no client burden (unlike traditional alliance scales like WAI or SRS). Indirectly supports documentation by providing insights into session dynamics that inform case conceptualization.
+- AI Progress Tracker: Automatically tracks symptom trends and goal attainment over time by analyzing progress note content. Generates visual charts showing progress at a glance. Supports longitudinal documentation, treatment planning, insurance reporting, and medical necessity documentation.
+- Medical Necessity Documentation (AI-Assisted): AI automatically includes medical necessity language in notes to support insurance compliance and reduce treatment denial risk. Embedded in note generation process.
+- CPT Code Auto-Computation: Automatically suggests CPT codes based on session type and duration. Clinician confirms suggested codes.
+
+4. Key Limitations or Missing Capabilities
+- Behavioral health only - not suitable for medical, surgical, or primary care documentation
+- No real-time transcription or live note preview during sessions (record-then-process model)
+- 10-15 minute processing delay after session before notes are available
+- One-way EHR integration via browser extension (not bidirectional API sync)
+- Cannot automatically pull patient data from EHR (diagnoses, medications, prior notes)
+- Cannot write structured data to discrete EHR fields (e.g., auto-populate diagnosis codes)
+- No ability to select or switch AI models (locked into proprietary engine)
+- Cannot combine multiple recordings or add recordings to existing dictations
+- Monthly note caps (Mini: 40, Basic: 100, Pro: 160, Super: 330)
+- No autosave or draft functionality publicly documented
+- No version control or note history/recovery
+- No explicit note locking mechanism after signing
+- No pre-session automated summary or prep tool
+- Browser-based (requires Chrome browser for EHR integration)
+- Requires client consent for session recording
+
+5. Pricing / Gating Notes
+- Higher tier required for treatment planning ($39.99/mo Basic tier minimum)
+- Higher tier required for advanced templates and modalities ($69.99/mo Pro tier for EMDR, Play, Psychiatry, 100+ templates)
+- Higher tier required for child/couple/family therapy ($69.99/mo Pro tier)
+- Higher tier required for full Alliance Genie access ($69.99/mo Pro tier)
+- Highest tier required for group therapy notes ($119.99/mo Super tier)
+- Mid-cycle overage if monthly note cap exceeded (requires upgrade to higher tier)
+- Annual billing offers discount but requires upfront payment ($60-$240 savings depending on tier)
+- Team/group practice pricing available but not publicly detailed on pricing page
+
+Raw data stored in raw/mentalyc.json
+
+============================================================

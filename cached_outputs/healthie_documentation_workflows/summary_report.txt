@@ -1,0 +1,53 @@
+Documentation & Clinical Workflows Competitor Research Summary - 2026-04-14
+============================================================
+
+COMPETITOR: Healthie
+------------------------------------------------------------
+1. Documentation Workflow Overview
+- Features found: 20
+
+2. Core Note and Treatment Plan Capabilities
+- Custom Charting Templates: Pre-built industry templates (SOAP, ADIME, Free Text) plus fully customizable templates via drag-and-drop Form Builder. Support for structured fields, free-text, rich text formatting, multiple field types.
+- Auto-save for Chart Notes: Continuous auto-save while editing notes; green indicator shows last save timestamp; prevents data loss during documentation.
+- Smart Fields: Auto-populate chart note fields from intake form responses (client demographics, insurance, health data). Reduces duplicate data entry.
+- Pre-fill from Prior Notes: Enable templates to auto-populate from previous session notes for same client. Pulls from most recent note using same template. Saves time on follow-up sessions.
+- Smart Phrases (Text Shortcuts): Create and save standard charting phrases/snippets for quick insertion during documentation. Can be shared across team members.
+- Sign and Lock Notes: Digital signature with timestamp; locking prevents edits (except addendums); multiple providers can sign; full Chart Note History audit trail.
+- Addendums: Add addendums to signed/locked notes while preserving original note integrity. Supports compliance requirements.
+- Quick Profile Panel: Side panel accessible during charting shows customizable client info: goals, medications, recent metrics, care plan, past notes summary. Reduces need to navigate away from note.
+- Workflows Dashboard: Centralized view of appointments requiring action. Filter by provider, client, date range, documentation type. Shows chart note status (Created, Signed, Locked). Tracks incomplete documentation across organization.
+- ICD-10 Diagnosis Integration: ICD-10 code search/selection fields in charting templates. Diagnoses auto-populate to client profile and billing forms (CMS 1500, Superbills).
+- CPT/Billing Fields in Charts: CPT codes, units, fee per unit can be embedded in charting templates. Auto-populates billing forms.
+- Import Chart Note to Care Plan: When adding recommendations to care plan, can import content directly from specific chart note fields. One-directional flow (chart → care plan).
+- Care Plan / Treatment Plan Builder: Create care/treatment plans with goals, recommendations, documents. Save as templates for reuse. Only one active plan at a time (visible to client). Track goal completion, streaks, progress.
+- Group Session Charting: Create chart notes for group sessions (not just individual). Same template-based workflow.
+- View Multiple Chart Notes at Once: Side-by-side view of multiple chart notes for same client. Aids in reviewing history.
+- E-fax Chart Notes: HIPAA-compliant e-fax of chart notes to other providers.
+- Export Chart Notes / Chart Summary: Export individual notes or download full client chart summary.
+- Share Chart Notes with Clients: Option to share specific chart notes or post-session summaries with clients via portal.
+- Zoom Integration for Telehealth: Direct integration with HIPAA-compliant Zoom. Video sessions, cloud recording. Required for AI Scribe functionality.
+- Audit Logs: Chart Note History tracks all signatures, timestamps, actions. Phase 1 audit logs via API capture appointment, charting note, claim, login history.
+
+3. Relevant AI Features in This Area
+- AI Scribe by Healthie: Automatically transcribes Zoom telehealth sessions and generates chart note drafts within 10-15 seconds after session completion. Analyzes transcript and populates any charting template (SOAP, ADIME, custom forms) based on field labels. Requires clinician review and editing.
+
+4. Key Limitations or Missing Capabilities
+- Charting functionality only available via web browser (not mobile app)
+- AI Scribe requires HIPAA-compliant Zoom integration (cannot use other video platforms)
+- AI Scribe supports one-on-one sessions only (no group sessions)
+- AI Scribe is post-session only (not real-time/ambient during session)
+- Phone dial-in for AI Scribe must be direct to Zoom (speaker phone may cause incomplete transcripts)
+- No explicit version history or rollback capability for chart notes
+- Deleted documents recovery requires contacting support (not self-service)
+- Pre-fill pulls from most recent note with same template (cannot select specific prior note)
+- Only one active care plan at a time per client
+
+5. Pricing / Gating Notes
+- AI Scribe add-on: $35/month for 40 hours (Extra Light) up to $2,000/month for 2,500 hours (Extra Large)
+- AI Scribe overages: $0.85/hour (rounded up), billed monthly
+- Dedicated Inbound E-Fax: $9.99/month add-on (Essentials plan)
+- Annual billing saves 10% on base plan cost
+
+Raw data stored in raw/healthie.json
+
+============================================================
