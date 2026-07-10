@@ -683,6 +683,8 @@ YOUR TASKS:
             file_obj.write(f"- {name}: {description}\n")
 
     def summarize_findings(self, all_data: Dict):
+        print(f"DEBUG focus_name: {self.focus_name!r}")
+        
         focus_label = self.focus_name or (
             "Custom" if self.custom_prompt else ("Groups-Focused" if self.groups_focus else "General")
         )
