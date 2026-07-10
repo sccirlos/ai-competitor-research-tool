@@ -683,8 +683,7 @@ YOUR TASKS:
             file_obj.write(f"- {name}: {description}\n")
 
     def summarize_findings(self, all_data: Dict):
-        print(f"DEBUG focus_name: {self.focus_name!r}")
-        
+
         focus_label = self.focus_name or (
             "Custom" if self.custom_prompt else ("Groups-Focused" if self.groups_focus else "General")
         )
@@ -697,6 +696,8 @@ YOUR TASKS:
             for name, data in all_data.items():
                 f.write(f"\nCOMPETITOR: {name}\n")
                 f.write("-" * 60 + "\n")
+
+                f.write(f"DEBUG focus_name = {self.focus_name}\n\n")
 
                 # AI Features & Capabilities
                 if self.focus_name == "AI Features & Capabilities":

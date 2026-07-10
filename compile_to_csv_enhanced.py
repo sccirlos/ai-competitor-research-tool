@@ -406,6 +406,40 @@ def generate_markdown_summary(
         rows = items[:limit] if limit else items
         return "".join([f"- {item}\n" for item in rows])
 
+
+    def feature_text(feature):
+        """Combine searchable feature fields into one lowercase string."""
+        item = feature if isinstance(feature, dict) else feature.__dict__
+        return " ".join(
+            str(item.get(field, ""))
+            for field in ("feature_name", "description", "category")
+        ).lower()
+
+    def filter_features(features, keywords):
+        """Return features whose name, description, or category matches a keyword."""
+        lowered_keywords = [keyword.lower() for keyword in keywords]
+        return [
+            feature
+            for feature in features
+            if any(keyword in feature_text(feature) for keyword in lowered_keywords)
+        ]
+
+    def write_feature_section(file_obj, heading, features):
+        """Write a Markdown feature section with a clear no-evidence fallback."""
+        file_obj.write(f"### {heading}\n\n")
+
+        if not features:
+            file_obj.write("- Not publicly documented.\n\n")
+            return
+
+        for feature in features:
+            item = feature if isinstance(feature, dict) else feature.__dict__
+            name = item.get("feature_name", "N/A")
+            description = item.get("description", "")
+            file_obj.write(f"- **{name}**: {description}\n")
+
+        file_obj.write("\n")
+
     with open(summary_path, "w") as f:
         f.write(f"# Competitive Research Summary\n\n")
         if focus_name:
@@ -629,6 +663,201 @@ def generate_markdown_summary(
 
                     f.write("### Short Summary\n\n")
                     f.write("This summary highlights how the competitor supports clinical documentation, note workflows, and related AI assistance.\n\n")
+
+                # Golden Thread & Clinical Care Journey
+                elif focus_name == "Golden Thread & Clinical Care Journey":
+                    intake_features = filter_features(
+                        general_features,
+                        [
+                            "intake",
+                            "assessment",
+                            "screening",
+                            "screener",
+                            "questionnaire",
+                            "clinical history",
+                            "presenting concern",
+                            "outcome measure",
+                            "phq",
+                            "gad",
+                        ],
+                    )
+
+                    diagnosis_features = filter_features(
+                        general_features,
+                        [
+                            "diagnosis",
+                            "diagnostic",
+                            "dsm",
+                            "icd",
+                            "primary diagnosis",
+                            "secondary diagnosis",
+                        ],
+                    )
+
+                    treatment_plan_features = filter_features(
+                        general_features,
+                        [
+                            "treatment plan",
+                            "care plan",
+                            "goal",
+                            "objective",
+                            "intervention",
+                            "protocol",
+                            "recommendation",
+                            "target date",
+                        ],
+                    )
+
+                    documentation_features = filter_features(
+                        general_features,
+                        [
+                            "progress note",
+                            "session note",
+                            "soap",
+                            "dap",
+                            "birp",
+                            "note template",
+                            "clinical note",
+                            "documentation",
+                            "previous note",
+                            "session summary",
+                        ],
+                    )
+
+                    longitudinal_features = filter_features(
+                        general_features,
+                        [
+                            "progress tracking",
+                            "goal tracking",
+                            "outcome tracking",
+                            "trend",
+                            "timeline",
+                            "longitudinal",
+                            "treatment review",
+                            "care journey",
+                            "clinical summary",
+                        ],
+                    )
+
+                    connectivity_features = filter_features(
+                        general_features,
+                        [
+                            "integrated",
+                            "integration",
+                            "linked",
+                            "connect",
+                            "automatically",
+                            "auto-populate",
+                            "populate",
+                            "insert",
+                            "carry forward",
+                            "reference",
+                            "sync",
+                            "clinical context",
+                        ],
+                    )
+
+                    relevant_ai_features = filter_features(
+                        ai_feats,
+                        [
+                            "treatment plan",
+                            "goal",
+                            "diagnosis",
+                            "clinical summary",
+                            "session summary",
+                            "progress",
+                            "note",
+                            "documentation",
+                            "clinical context",
+                            "assessment",
+                        ],
+                    )
+
+                    f.write("### Clinical Care Journey Overview\n\n")
+                    f.write(
+                        f"- Relevant clinical workflow features found: "
+                        f"{len(general_features)}\n"
+                    )
+                    f.write(
+                        "- This analysis evaluates how clinical information appears "
+                        "to move across intake, diagnosis, treatment planning, session "
+                        "documentation, and ongoing care.\n\n"
+                    )
+
+                    write_feature_section(f, "Intake & Assessment Workflow", intake_features)
+                    write_feature_section(f, "Diagnosis Workflow", diagnosis_features)
+                    write_feature_section(f, "Treatment Planning Experience", treatment_plan_features)
+                    write_feature_section(f, "Session Documentation Workflow", documentation_features)
+                    write_feature_section(f, "Longitudinal Care & Goal Tracking", longitudinal_features)
+                    write_feature_section(f, "Clinical Data Connectivity", connectivity_features)
+                    write_feature_section(f, "Relevant AI Features", relevant_ai_features)
+
+                    f.write("### Key Limitations or Missing Capabilities\n\n")
+                    f.write(
+                        bullet_list(
+                            tech_constraints,
+                            "No major Golden Thread limitations were publicly documented.",
+                        )
+                    )
+                    f.write("\n")
+
+                    f.write("### Pricing / Gating Notes\n\n")
+                    if pricing_tiers:
+                        for tier in pricing_tiers:
+                            t = tier if isinstance(tier, dict) else tier.__dict__
+                            f.write(
+                                f"- **{t.get('tier_name', 'N/A')}**: "
+                                f"{t.get('price', 'N/A')}\n"
+                            )
+
+                    if add_costs:
+                        for cost in add_costs:
+                            f.write(f"- {cost}\n")
+
+                    if not pricing_tiers and not add_costs:
+                        f.write("- No pricing or gating details were publicly documented.\n")
+                    f.write("\n")
+
+                    f.write("### Golden Thread Summary\n\n")
+                    documented_stages = []
+
+                    if intake_features:
+                        documented_stages.append("intake and assessment")
+                    if diagnosis_features:
+                        documented_stages.append("diagnosis")
+                    if treatment_plan_features:
+                        documented_stages.append("treatment planning")
+                    if documentation_features:
+                        documented_stages.append("session documentation")
+                    if longitudinal_features:
+                        documented_stages.append("longitudinal progress tracking")
+
+                    if documented_stages:
+                        f.write(
+                            "- Public evidence was found for: "
+                            + ", ".join(documented_stages)
+                            + ".\n"
+                        )
+                    else:
+                        f.write(
+                            "- Public evidence about the end-to-end clinical care "
+                            "journey was limited.\n"
+                        )
+
+                    if connectivity_features:
+                        f.write(
+                            "- Some documented capabilities suggest clinical "
+                            "information may be connected or reusable across "
+                            "workflows. The exact degree of automation should be "
+                            "verified through deeper research.\n"
+                        )
+                    else:
+                        f.write(
+                            "- No clear public evidence was found showing that "
+                            "clinical data automatically flows between stages "
+                            "of care.\n"
+                        )
+                    f.write("\n")
 
                 # Messaging & Collaboration
                 elif focus_name == "Messaging & Collaboration":
