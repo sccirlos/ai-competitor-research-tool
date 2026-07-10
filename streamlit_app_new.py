@@ -351,14 +351,6 @@ def reset_research_state() -> None:
     st.session_state.research_running = False
     reset_loading_state()
 
-def handle_research_selection_change() -> None:
-    """Stop an interrupted analysis when the research setup changes."""
-    st.session_state.research_running = False
-    st.session_state.research_complete = False
-    st.session_state.current_output_folder = None
-    reset_loading_state()
-
-
 def read_text_file(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
@@ -610,8 +602,6 @@ def render_sidebar() -> dict[str, Any]:
             "Focus area",
             options=config_names,
             help="Choose what aspect of competitors to analyze",
-            key="research_mode_select",
-            on_change=handle_research_selection_change,
         )
 
         selected_config = get_config_by_name(research_mode)
@@ -632,9 +622,7 @@ def render_sidebar() -> dict[str, Any]:
                 "Competitor",
                 options=sorted(COMPETITORS.keys()),
                 help="Choose one competitor to research",
-                key="competitor_select",
-                on_change=handle_research_selection_change,
-            )       
+            )
             competitors_to_research = [selected_competitor]
 
         elif research_goal == "Compare multiple competitors":
@@ -644,19 +632,18 @@ def render_sidebar() -> dict[str, Any]:
                 default=[],
                 placeholder="Select competitors",
                 help="Choose multiple competitors to analyze",
-                key="multi_competitor_select",
-                on_change=handle_research_selection_change,
             )
         else:
             competitors_to_research = st.multiselect(
                 "Competitors to compare",
-                options=[c for c in sorted(COMPETITORS.keys()) if c != "SimplePractice"
+                options=[
+                    c
+                    for c in sorted(COMPETITORS.keys())
+                    if c != "SimplePractice"
                 ],
                 max_selections=1,
                 placeholder="Select 1 competitor",
                 help="Select 1 competitor for detailed comparison to SimplePractice",
-                key="comparison_competitor_select",
-                on_change=handle_research_selection_change,
             )
             comparison_mode = True
 
@@ -712,8 +699,11 @@ def render_sidebar() -> dict[str, Any]:
 
         st.divider()
 
+        # with st.expander("Recent analyses", expanded=False):
+            # render_cache_section()
+            
         with st.expander("Recent analyses", expanded=False):
-            render_cache_section()
+            st.caption("Temporarily disabled for debugging.")
 
     return {
         "research_goal": research_goal,
