@@ -351,6 +351,7 @@ def reset_research_state() -> None:
     st.session_state.research_running = False
     reset_loading_state()
 
+
 def read_text_file(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
@@ -636,11 +637,7 @@ def render_sidebar() -> dict[str, Any]:
         else:
             competitors_to_research = st.multiselect(
                 "Competitors to compare",
-                options=[
-                    c
-                    for c in sorted(COMPETITORS.keys())
-                    if c != "SimplePractice"
-                ],
+                options=[c for c in sorted(COMPETITORS.keys()) if c != "SimplePractice"],
                 max_selections=1,
                 placeholder="Select 1 competitor",
                 help="Select 1 competitor for detailed comparison to SimplePractice",
@@ -699,11 +696,8 @@ def render_sidebar() -> dict[str, Any]:
 
         st.divider()
 
-        # with st.expander("Recent analyses", expanded=False):
-            # render_cache_section()
-            
         with st.expander("Recent analyses", expanded=False):
-            st.caption("Temporarily disabled for debugging.")
+            render_cache_section()
 
     return {
         "research_goal": research_goal,

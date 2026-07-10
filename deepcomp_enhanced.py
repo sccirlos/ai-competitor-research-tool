@@ -27,25 +27,25 @@ COMPETITORS = {
     "Headway": "https://headway.co",
     "Berries": "https://heyberries.com/",
     "Quill": "https://quilltherapysolutions.com/",
-    "PracticeFusion": "https://www.practicefusion.com/",
-    "Tebra": "https://www.tebra.com/",
-    "OfficeAlly": "https:cms.officeally.com/",
-    "PsychologyToday": "https://www.psychologytoday.com/us/therapists",
-    "BetterHelp": "https://www.betterhelp.com/",
-    "Alma": "https://www.helloalma.com/",
-    "Headspace": "https://www.headspace.com/",
-    "CandidHealth": "https://www.candidhealth.com/",
-    "Enter": "https://www.enterhealth.com/",
-    "Adonis": "https://www.adonis.io/",
-    "CombineHealth": "https://www.combinehealth.ai/",
-    "RapidClaims": "https://www.rapidclaims.ai/",
-    "Akasa": "https://www.akasa.com/",
-    "ThoughtfulAI": "https://www.thoughtful.ai/",
-    "SubstrateAI": "https://www.substrateai.com/",
-    "Fathom": "https://www.fathom.ai/",
-    "MediCodio": "https://www.medicodio.ai/",
-    "ChartaHealth": "https://www.chartahealth.com/",
-    "RivitHealth": "https://www.rivithealth.com/",
+    "PracticeFusion": "https://https://www.practicefusion.com/",
+    "Tebra": "https://https://www.tebra.com/",
+    "OfficeAlly": "https://https://cms.officeally.com/",
+    "PsychologyToday": "https://https://www.psychologytoday.com/us/therapists",
+    "BetterHelp": "https://https://www.betterhelp.com/",
+    "Alma": "https://https://www.helloalma.com/",
+    "Headspace": "https://https://www.headspace.com/",
+    "CandidHealth": "https://https://www.candidhealth.com/",
+    "Enter": "https://https://www.enterhealth.com/",
+    "Adonis": "https://https://www.adonis.io/",
+    "CombineHealth": "https://https://www.combinehealth.ai/",
+    "RapidClaims": "https://https://www.rapidclaims.ai/",
+    "Akasa": "https://https://www.akasa.com/",
+    "ThoughtfulAI": "https://https://www.thoughtful.ai/",
+    "SubstrateAI": "https://https://www.substrateai.com/",
+    "Fathom": "https://https://www.fathom.ai/",
+    "MediCodio": "https://https://www.medicodio.ai/",
+    "ChartaHealth": "https://https://www.chartahealth.com/",
+    "RivitHealth": "https://https://www.rivithealth.com/",
     "Anomaly":"https://www.findanomaly.com/",
     "Infinx": "https://www.infinx.com/",
     "Infinitus": "https://www.infinitus.ai/",
@@ -964,265 +964,6 @@ YOUR TASKS:
                         f.write(
                             "- No clear public evidence was found showing that clinical data "
                             "automatically flows between stages of care.\n"
-                        )
-
-                # Revenue Cycle Management
-                elif self.focus_name == "Revenue Cycle Management":
-                    all_features = data.get("all_features", [])
-                    insurance_offerings = data.get("insurance_offerings", [])
-                    service_offerings = data.get("service_offerings", [])
-                    ai_features = data.get("ai_features", [])
-
-                    eligibility_features = self._filter_features(
-                        all_features,
-                        [
-                            "eligibility",
-                            "benefits verification",
-                            "benefit verification",
-                            "coverage verification",
-                            "insurance verification",
-                            "real-time eligibility",
-                            "patient responsibility",
-                            "coverage validation",
-                        ],
-                    )
-
-                    coding_features = self._filter_features(
-                        all_features,
-                        [
-                            "cpt",
-                            "icd",
-                            "coding",
-                            "charge capture",
-                            "superbill",
-                            "diagnosis link",
-                            "diagnosis-to-charge",
-                            "billing code",
-                        ],
-                    )
-
-                    claims_features = self._filter_features(
-                        all_features,
-                        [
-                            "claim",
-                            "claims",
-                            "claim scrub",
-                            "claim submission",
-                            "batch submission",
-                            "clearinghouse",
-                            "rejection",
-                            "rejected",
-                            "denial",
-                            "denied",
-                            "resubmission",
-                            "claim status",
-                        ],
-                    )
-
-                    payment_posting_features = self._filter_features(
-                        all_features,
-                        [
-                            "era",
-                            "electronic remittance",
-                            "eft",
-                            "electronic funds transfer",
-                            "payment posting",
-                            "auto-posting",
-                            "autoposting",
-                            "reconciliation",
-                            "insurance payment",
-                        ],
-                    )
-
-                    patient_billing_features = self._filter_features(
-                        all_features,
-                        [
-                            "patient statement",
-                            "statement",
-                            "online payment",
-                            "payment plan",
-                            "saved card",
-                            "card on file",
-                            "outstanding balance",
-                            "collections",
-                            "payment reminder",
-                            "patient billing",
-                        ],
-                    )
-
-                    reporting_features = self._filter_features(
-                        all_features,
-                        [
-                            "accounts receivable",
-                            "a/r",
-                            "ar aging",
-                            "aging report",
-                            "revenue report",
-                            "billing report",
-                            "collections report",
-                            "financial analytics",
-                            "billing dashboard",
-                            "practice performance",
-                            "financial insight",
-                        ],
-                    )
-
-                    automation_features = self._filter_features(
-                        all_features,
-                        [
-                            "automated",
-                            "automation",
-                            "auto-post",
-                            "auto submit",
-                            "auto-submit",
-                            "real-time",
-                            "workflow",
-                            "rules engine",
-                            "reminder",
-                            "batch",
-                            "scrub",
-                        ],
-                    )
-
-                    relevant_ai_features = self._filter_features(
-                        ai_features,
-                        [
-                            "coding",
-                            "claim",
-                            "denial",
-                            "billing",
-                            "revenue",
-                            "payment",
-                            "financial",
-                            "eligibility",
-                            "prior authorization",
-                        ],
-                    )
-
-                    f.write("1. Revenue Cycle Overview\n")
-                    f.write(
-                        f"- Relevant revenue-cycle features found: {len(all_features)}\n"
-                    )
-                    f.write(
-                        "- This report evaluates how revenue moves from eligibility "
-                        "verification through claims, reimbursement, patient billing, "
-                        "collections, and reporting.\n"
-                    )
-
-                    self._write_feature_section(
-                        f,
-                        "2. Eligibility & Benefits Verification",
-                        eligibility_features,
-                    )
-                    self._write_feature_section(
-                        f,
-                        "3. Coding & Charge Capture",
-                        coding_features,
-                    )
-                    self._write_feature_section(
-                        f,
-                        "4. Claims Management",
-                        claims_features,
-                    )
-                    self._write_feature_section(
-                        f,
-                        "5. Payment Posting & Reconciliation",
-                        payment_posting_features,
-                    )
-                    self._write_feature_section(
-                        f,
-                        "6. Patient Billing & Collections",
-                        patient_billing_features,
-                    )
-                    self._write_feature_section(
-                        f,
-                        "7. Revenue Reporting & Financial Insights",
-                        reporting_features,
-                    )
-                    self._write_feature_section(
-                        f,
-                        "8. Workflow Automation",
-                        automation_features,
-                    )
-                    self._write_feature_section(
-                        f,
-                        "9. Relevant AI Features",
-                        relevant_ai_features,
-                    )
-
-                    f.write("\n10. Insurance and RCM Service Offerings\n")
-                    if insurance_offerings:
-                        for item in insurance_offerings:
-                            record = item if isinstance(item, dict) else item.__dict__
-                            f.write(
-                                f"- {record.get('offering_name', 'N/A')}: "
-                                f"{record.get('description', '')}\n"
-                            )
-                    if service_offerings:
-                        for item in service_offerings:
-                            record = item if isinstance(item, dict) else item.__dict__
-                            category = record.get("category", "Service")
-                            f.write(
-                                f"- [{category}] {record.get('offering_name', 'N/A')}: "
-                                f"{record.get('description', '')}\n"
-                            )
-                    if not insurance_offerings and not service_offerings:
-                        f.write("- Not publicly documented\n")
-
-                    f.write("\n11. Key Limitations or Missing Capabilities\n")
-                    constraints = data.get("technical_constraints", [])
-                    if constraints:
-                        for item in constraints:
-                            f.write(f"- {item}\n")
-                    else:
-                        f.write("- Not publicly documented\n")
-
-                    f.write("\n12. Pricing / Gating Notes\n")
-                    costs = data.get("additional_costs", [])
-                    if costs:
-                        for item in costs:
-                            f.write(f"- {item}\n")
-                    else:
-                        f.write("- Not publicly documented\n")
-
-                    f.write("\n13. Revenue Cycle Summary\n")
-                    documented_stages = []
-
-                    if eligibility_features:
-                        documented_stages.append("eligibility and benefits")
-                    if coding_features:
-                        documented_stages.append("coding and charge capture")
-                    if claims_features:
-                        documented_stages.append("claims management")
-                    if payment_posting_features:
-                        documented_stages.append("payment posting")
-                    if patient_billing_features:
-                        documented_stages.append("patient billing and collections")
-                    if reporting_features:
-                        documented_stages.append("financial reporting")
-
-                    if documented_stages:
-                        f.write(
-                            "- Public evidence was found for: "
-                            + ", ".join(documented_stages)
-                            + ".\n"
-                        )
-                    else:
-                        f.write(
-                            "- Public evidence about the end-to-end revenue cycle "
-                            "was limited.\n"
-                        )
-
-                    if automation_features:
-                        f.write(
-                            "- Some workflows appear automated or partially automated. "
-                            "The exact degree of staff intervention should be verified "
-                            "through deeper research.\n"
-                        )
-                    else:
-                        f.write(
-                            "- No clear public evidence was found showing broad "
-                            "automation across the revenue cycle.\n"
                         )
 
                 # Messaging & Collaboration
