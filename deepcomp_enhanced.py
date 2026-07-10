@@ -27,25 +27,25 @@ COMPETITORS = {
     "Headway": "https://headway.co",
     "Berries": "https://heyberries.com/",
     "Quill": "https://quilltherapysolutions.com/",
-    "PracticeFusion": "https://https://www.practicefusion.com/",
-    "Tebra": "https://https://www.tebra.com/",
-    "OfficeAlly": "https://https://cms.officeally.com/",
-    "PsychologyToday": "https://https://www.psychologytoday.com/us/therapists",
-    "BetterHelp": "https://https://www.betterhelp.com/",
-    "Alma": "https://https://www.helloalma.com/",
-    "Headspace": "https://https://www.headspace.com/",
-    "CandidHealth": "https://https://www.candidhealth.com/",
-    "Enter": "https://https://www.enterhealth.com/",
-    "Adonis": "https://https://www.adonis.io/",
-    "CombineHealth": "https://https://www.combinehealth.ai/",
-    "RapidClaims": "https://https://www.rapidclaims.ai/",
-    "Akasa": "https://https://www.akasa.com/",
-    "ThoughtfulAI": "https://https://www.thoughtful.ai/",
-    "SubstrateAI": "https://https://www.substrateai.com/",
-    "Fathom": "https://https://www.fathom.ai/",
-    "MediCodio": "https://https://www.medicodio.ai/",
-    "ChartaHealth": "https://https://www.chartahealth.com/",
-    "RivitHealth": "https://https://www.rivithealth.com/",
+    "PracticeFusion": "https://www.practicefusion.com/",
+    "Tebra": "https://www.tebra.com/",
+    "OfficeAlly": "https:cms.officeally.com/",
+    "PsychologyToday": "https://www.psychologytoday.com/us/therapists",
+    "BetterHelp": "https://www.betterhelp.com/",
+    "Alma": "https://www.helloalma.com/",
+    "Headspace": "https://www.headspace.com/",
+    "CandidHealth": "https://www.candidhealth.com/",
+    "Enter": "https://www.enterhealth.com/",
+    "Adonis": "https://www.adonis.io/",
+    "CombineHealth": "https://www.combinehealth.ai/",
+    "RapidClaims": "https://www.rapidclaims.ai/",
+    "Akasa": "https://www.akasa.com/",
+    "ThoughtfulAI": "https://www.thoughtful.ai/",
+    "SubstrateAI": "https://www.substrateai.com/",
+    "Fathom": "https://www.fathom.ai/",
+    "MediCodio": "https://www.medicodio.ai/",
+    "ChartaHealth": "https://www.chartahealth.com/",
+    "RivitHealth": "https://www.rivithealth.com/",
     "Anomaly":"https://www.findanomaly.com/",
     "Infinx": "https://www.infinx.com/",
     "Infinitus": "https://www.infinitus.ai/",
@@ -635,6 +635,53 @@ YOUR TASKS:
 
         print(f"Comprehensive comparison report generated: {report_path}")
 
+    @staticmethod
+    def _normalize_feature(feature: Any) -> Dict[str, Any]:
+        """Return a feature-like object as a plain dictionary."""
+        if isinstance(feature, dict):
+            return feature
+        if hasattr(feature, "model_dump"):
+            return feature.model_dump()
+        return getattr(feature, "__dict__", {})
+
+    @classmethod
+    def _feature_text(cls, feature: Any) -> str:
+        """Combine searchable feature fields into one lowercase string."""
+        item = cls._normalize_feature(feature)
+        return " ".join(
+            str(item.get(field, ""))
+            for field in ("feature_name", "description", "category")
+        ).lower()
+
+    @classmethod
+    def _filter_features(cls, features: List[Any], keywords: List[str]) -> List[Any]:
+        """Return features whose name, description, or category matches a keyword."""
+        lowered_keywords = [keyword.lower() for keyword in keywords]
+        return [
+            feature
+            for feature in features
+            if any(keyword in cls._feature_text(feature) for keyword in lowered_keywords)
+        ]
+
+    @classmethod
+    def _write_feature_section(
+        cls,
+        file_obj,
+        heading: str,
+        features: List[Any],
+    ) -> None:
+        """Write a numbered report section or a clear no-evidence message."""
+        file_obj.write(f"\n{heading}\n")
+        if not features:
+            file_obj.write("- Not publicly documented\n")
+            return
+
+        for feature in features:
+            item = cls._normalize_feature(feature)
+            name = item.get("feature_name", "N/A")
+            description = item.get("description", "")
+            file_obj.write(f"- {name}: {description}\n")
+
     def summarize_findings(self, all_data: Dict):
         focus_label = self.focus_name or (
             "Custom" if self.custom_prompt else ("Groups-Focused" if self.groups_focus else "General")
@@ -770,6 +817,154 @@ YOUR TASKS:
                         f.write("\n5. Pricing / Gating Notes\n")
                         for item in data["additional_costs"]:
                             f.write(f"- {item}\n")
+
+                # Golden Thread & Clinical Care Journey
+                elif self.focus_name == "Golden Thread & Clinical Care Journey":
+                    all_features = data.get("all_features", [])
+                    ai_features = data.get("ai_features", [])
+
+                    intake_features = self._filter_features(
+                        all_features,
+                        [
+                            "intake", "assessment", "screening", "screener",
+                            "questionnaire", "clinical history", "presenting concern",
+                            "outcome measure", "phq", "gad",
+                        ],
+                    )
+                    diagnosis_features = self._filter_features(
+                        all_features,
+                        [
+                            "diagnosis", "diagnostic", "dsm", "icd",
+                            "primary diagnosis", "secondary diagnosis",
+                        ],
+                    )
+                    treatment_plan_features = self._filter_features(
+                        all_features,
+                        [
+                            "treatment plan", "care plan", "goal", "objective",
+                            "intervention", "protocol", "recommendation",
+                            "target date",
+                        ],
+                    )
+                    documentation_features = self._filter_features(
+                        all_features,
+                        [
+                            "progress note", "session note", "soap", "dap",
+                            "birp", "note template", "clinical note",
+                            "documentation", "previous note", "session summary",
+                        ],
+                    )
+                    longitudinal_features = self._filter_features(
+                        all_features,
+                        [
+                            "progress tracking", "goal tracking", "outcome tracking",
+                            "trend", "timeline", "longitudinal", "treatment review",
+                            "care journey", "clinical summary",
+                        ],
+                    )
+                    connectivity_features = self._filter_features(
+                        all_features,
+                        [
+                            "integrated", "integration", "linked", "connect",
+                            "automatically", "auto-populate", "populate", "insert",
+                            "carry forward", "reference", "sync",
+                            "clinical context",
+                        ],
+                    )
+                    relevant_ai_features = self._filter_features(
+                        ai_features,
+                        [
+                            "treatment plan", "goal", "diagnosis",
+                            "clinical summary", "session summary", "progress",
+                            "note", "documentation", "clinical context",
+                            "assessment",
+                        ],
+                    )
+
+                    f.write("1. Clinical Care Journey Overview\n")
+                    f.write(
+                        f"- Relevant clinical workflow features found: {len(all_features)}\n"
+                    )
+                    f.write(
+                        "- This report evaluates how clinical information appears to move "
+                        "across intake, diagnosis, treatment planning, session documentation, "
+                        "and ongoing care.\n"
+                    )
+
+                    self._write_feature_section(
+                        f, "2. Intake & Assessment Workflow", intake_features
+                    )
+                    self._write_feature_section(
+                        f, "3. Diagnosis Workflow", diagnosis_features
+                    )
+                    self._write_feature_section(
+                        f, "4. Treatment Planning Experience", treatment_plan_features
+                    )
+                    self._write_feature_section(
+                        f, "5. Session Documentation Workflow", documentation_features
+                    )
+                    self._write_feature_section(
+                        f, "6. Longitudinal Care & Goal Tracking", longitudinal_features
+                    )
+                    self._write_feature_section(
+                        f, "7. Clinical Data Connectivity", connectivity_features
+                    )
+                    self._write_feature_section(
+                        f, "8. Relevant AI Features", relevant_ai_features
+                    )
+
+                    f.write("\n9. Key Limitations or Missing Capabilities\n")
+                    constraints = data.get("technical_constraints", [])
+                    if constraints:
+                        for item in constraints:
+                            f.write(f"- {item}\n")
+                    else:
+                        f.write("- Not publicly documented\n")
+
+                    f.write("\n10. Pricing / Gating Notes\n")
+                    costs = data.get("additional_costs", [])
+                    if costs:
+                        for item in costs:
+                            f.write(f"- {item}\n")
+                    else:
+                        f.write("- Not publicly documented\n")
+
+                    f.write("\n11. Golden Thread Summary\n")
+                    documented_stages = []
+                    if intake_features:
+                        documented_stages.append("intake and assessment")
+                    if diagnosis_features:
+                        documented_stages.append("diagnosis")
+                    if treatment_plan_features:
+                        documented_stages.append("treatment planning")
+                    if documentation_features:
+                        documented_stages.append("session documentation")
+                    if longitudinal_features:
+                        documented_stages.append("longitudinal progress tracking")
+
+                    if documented_stages:
+                        f.write(
+                            "- Public evidence was found for: "
+                            + ", ".join(documented_stages)
+                            + ".\n"
+                        )
+                    else:
+                        f.write(
+                            "- Public evidence about the end-to-end clinical care journey "
+                            "was limited.\n"
+                        )
+
+                    if connectivity_features:
+                        f.write(
+                            "- Some documented capabilities suggest that information may be "
+                            "connected or reusable across workflows. The exact level of "
+                            "automation should be verified through deeper research.\n"
+                        )
+                    else:
+                        f.write(
+                            "- No clear public evidence was found showing that clinical data "
+                            "automatically flows between stages of care.\n"
+                        )
 
                 # Messaging & Collaboration
                 elif self.focus_name == "Messaging & Collaboration":
