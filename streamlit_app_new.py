@@ -411,13 +411,12 @@ def render_home() -> None:
     st.info("Start in the sidebar: choose a goal, select a focus area, and pick a competitor.")
 
     with st.expander("📋 View Available Competitors"):
-        competitors_df = pd.DataFrame(
-            [
-                {"Competitor": name, "Website": url}
-                for name, url in sorted(COMPETITORS.items())
-            ]
-        )
-        st.dataframe(competitors_df, use_container_width=True, hide_index=True)
+        competitor_lines = [
+            f"- **{name}** — {url}"
+            for name, url in sorted(COMPETITORS.items())
+        ]
+
+        st.markdown("\n".join(competitor_lines))
 
 
 def render_focus_area_manager(config_names: list[str]) -> None:
@@ -1148,17 +1147,28 @@ def render_downloads(output_dir: Path) -> None:
 if not check_api_key():
     show_api_key_error()
 
-# Temporary sidebar-only crash test
-st.session_state.research_running = False
-st.session_state.research_complete = False
-st.session_state.current_output_folder = None
-reset_loading_state()
-
 sidebar_state = render_sidebar()
 
-render_home()
+if st.session_state.loading_cache:
+    load_cached_output()
 
-st.stop()
+elif st.session_state.research_running:
+    run_research(
+        research_goal=sidebar_state["research_goal"],
+        research_mode=sidebar_state["research_mode"],
+        selected_config=sidebar_state["selected_config"],
+        competitors_to_research=sidebar_state["competitors_to_research"],
+        force_refresh=sidebar_state["force_refresh"],
+    )
+
+elif (
+    st.session_state.research_complete
+    and st.session_state.current_output_folder
+):
+    render_results(sidebar_state["research_goal"])
+
+else:
+    render_home()
 
 st.divider()
 st.caption("Built with Streamlit • Powered by Firecrawl")
