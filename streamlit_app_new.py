@@ -1156,14 +1156,7 @@ reset_loading_state()
 
 sidebar_state = render_sidebar()
 
-st.write("Sidebar rendered successfully")
-st.json(
-    {
-        "research_goal": sidebar_state["research_goal"],
-        "research_mode": sidebar_state["research_mode"],
-        "competitors_to_research": sidebar_state["competitors_to_research"],
-    }
-)
+render_home()
 
 st.stop()
 
